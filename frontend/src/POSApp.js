@@ -10,7 +10,7 @@ function ShopApp() {
 
   // 初始化：從後端抓商品清單
   useEffect(() => {
-    axios.get("http://api.localhost/api/sales/")
+    axios.get("http://localhost/api/sales/")
       .then(res => setItems(res.data))
       .catch(err => console.error("API 錯誤:", err));
   }, []);
@@ -22,7 +22,7 @@ function ShopApp() {
       return;
     }
 
-    axios.post("http://api.localhost/api/sales/", {
+    axios.post("http://localhost/api/sales/", {
       name: name,
       price: parseFloat(price),
       description: desc,
