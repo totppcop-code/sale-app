@@ -10,6 +10,7 @@ spec:
       containers:
         - name: backend
           image: sale-app-backend:latest
+          imagePullPolicy: IfNotPresent
           command: ["python", "manage.py", "migrate"]
           envFrom:
             - configMapRef:
