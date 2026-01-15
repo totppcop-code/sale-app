@@ -13,8 +13,6 @@ spec:
           imagePullPolicy: IfNotPresent
           command: ["python", "manage.py", "migrate"]
           envFrom:
-            - configMapRef:
-                name: backend-config
             - secretRef:
                 name: backend-secret
       restartPolicy: Never
